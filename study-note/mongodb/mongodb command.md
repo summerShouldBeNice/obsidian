@@ -7,6 +7,10 @@
 	1. 显示当前所在的数据库
 4. show collections
 	1. 显示当前数据库下的所有集合
+5. db.collection.drop()
+	1. 删除当前集合下的所有文档
+6. db.dropDatabase()
+	1. 删除数据库
 ## 数据库的crud操作
 - 插入
 	- db.collection.insert(doc)
@@ -25,4 +29,15 @@
 - 修改
 	- db.collection.update(查询条件，新对象)
 		- 修改根据查询条件查询到的符合查询条件的对象
-	- db.collection.updateOne()
+		- *example:* db.users.update({"username" : "warmwind"}, {[[operator]]:{"password" : "2693387413"}})
+	- db.collection.updateOne(查询条件，新对象)
+		- 修改根据查询条件查询到的符合查询条件的对象
+	- db.collection.updateMany(查询条件，新对象)
+		- 同时修改根据查询条件查询到的符合查询条件的对象
+- 删除
+	- db.collection.remove(条件)
+		- 根据条件删除，默认条件下删除多个，如果为空则清空集合
+	- db.colletion.deleteOne()
+		- 根据条件删除一个
+	- db.colletion.deleteMany()
+		- 根据条件删除多个
