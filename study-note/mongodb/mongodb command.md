@@ -20,3 +20,9 @@
 		- 查找当前符合条件的所有文档
 	- db.collection.findOne()
 		- 查询当前符合条件的第一个文档
+	- db.collection.find().count()
+		- 查询当前符合条件的所有文档数量
+- 修改
+	- db.collection.update(查询条件，新对象)
+		- 修改根据查询条件查询到的符合查询条件的对象
+	- db.collection.updateOne()
