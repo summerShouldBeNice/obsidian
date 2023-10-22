@@ -18,3 +18,5 @@
 - 查找
 	- db.collection.find()
 		- 查找当前符合条件的所有文档
+	- db.collection.findOne()
+		- 查询当前符合条件的第一个文档
