@@ -2,4 +2,29 @@
 - 使用方式
 	- 引入依赖
 	- 开启功能EnableOpenApi
-	- 
+- 常用注解
+	- @Api：用在请求的类上表示对类的说明
+		- tags= 说明该类的作用，可以在ui看到
+		- value= ui看不到，没必要配置
+	- @ApiOperation：用在请求的方法上，说明该请求的用途
+		- value= 方法的用途和作用
+		- notes= 备注说明
+		- 
+	- @ApiImplicitParams：用在请求方法上，表示一组参数说明
+		- @ApiImplicitParam: 用在@ApiImplicitParams注解内，制定一个请求参数的各个方面
+			- name：参数名
+			- value：参数的汉字说明
+			- required：参数是否必须传递
+			- paramType：参数放在哪个地方
+				- header -> 请求参数的获取 @RequestHeader
+				- query -> 请求参数的获取 @RequestParam
+				- path -> 用于restful接口 ->请求参数的获取 @PathVariable
+				- div 不常用
+				- form 不常用
+	- @ApiResponses：用在请求方法上，表示一组响应
+		- @ApiResponse：用在@ApiResponses中，一般用于表示一个错误的响应信息
+			- code 数字
+			- message 信息
+			- response 抛出异常类
+	- @ApiModel：用在响应类上，表示返回一个响应数据的信息（一般用在post创建的时候，使用@RequestBody这样的场景，请求参数无法使用@ApiImplicitParams注解进行描述的时候）
+		- @ApiModelProperty：用在属性上，描述响应类的属性
