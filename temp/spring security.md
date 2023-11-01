@@ -1,0 +1,15 @@
+## 登录请求为例
+***
+1. UsernamePasswordAuthenticationFilter拦截登录请求
+2. UsernamePasswordAuthenticationFilter获取到用户名和密码构造一个UsernamePasswordAuthenticationToken传入AuthenticationManager
+3. AuthenticationManager找到对应的Provider进行具体校验逻辑处理
+4. 最后登录信息保存进SecurityContext
+***
+### 重要接口和类及其作用
+***
+1. Authentication接口，表示当前访问系统的用户，封装了用户相关信息
+2. AuthenticationManager接口：定义了认证Authentication的方法
+3. UserDetailsService接口：加载用户特定数据的核心接口。里面定义了一个根据用户名查询用户信息的方法
+4. UserDetails接口：提供核心用户信息。通过UserDetailsService根据用户名获取处理的用户信息要封装成UserDetails对象返回。然后将这些信息封装到Authentication对象中
+5. UsernamePasswordAuthenticationFilter实现类：实现了我们最常用的基于用户名和密码的认证逻辑，封装Authentication对象
+6. DaoAuthenticationProvider实现类：是AuthenticationManager中管理的其中一个Provider，因为是要访问数据库，所以叫Dao
