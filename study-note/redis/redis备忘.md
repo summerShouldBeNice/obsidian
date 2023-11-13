@@ -19,7 +19,7 @@
 
 ## reids string类型命令
 
-1. SET
+1. SET 
     
 2. GET
     
