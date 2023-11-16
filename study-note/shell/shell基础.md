@@ -8,3 +8,4 @@
 ## shell脚本编程
 1. shell脚本一般使用vim编辑器进行编辑
 2. 一般shell脚本的第一行会写 #! /bin/bash；#！是shebang
+3. echo $SHELL 
