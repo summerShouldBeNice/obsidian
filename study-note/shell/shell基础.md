@@ -7,6 +7,12 @@
 ***
 ## shell脚本编程
 1. shell脚本一般使用vim编辑器进行编辑
-2. 一般shell脚本的第一行会写 #! /bin/bash；#！是shebang
+2. 一般shell脚本的第一行会写 #! /bin/bash；#！是shebang用于指定当前脚本的解释器
+```shell
+#!/bin/zsh
+
+#this is my fitst shell
+
+echo "hello world"
 ```
-4. echo $SHELL 
+4. echo $SHELL  输出当前shell的解释器
