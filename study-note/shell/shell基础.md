@@ -42,3 +42,7 @@ echo "hello world"
 	3. '不能识别特殊变量
 	4. “能识别特殊变量
 	5. $? 特殊变量 输出上一个命令执行是否正确
+	6. 开启子shell的执行方式 bash ./create_var.sh
+		1. 比如定义了一个变量name=18，然后定义了一个shell脚本命令为name=19，如果开启子shell的执行方式去执行，输出echo $name输出的还是18
+	7. 不开启子shell的执行方式source ./create_var.sh
+		1. 如果使用不开启子shell的执行方式去执行，输出的是19
